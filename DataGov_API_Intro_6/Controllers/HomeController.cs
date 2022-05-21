@@ -68,6 +68,7 @@ namespace DataGov_API_Intro_6.Controllers
             }
             catch (Exception e)
             {
+                // Error!
                 // This is a useful place to insert a breakpoint and observe the error message
                 Console.WriteLine(e.Message);
             }
