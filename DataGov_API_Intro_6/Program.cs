@@ -10,7 +10,7 @@ builder.Services.AddRazorPages();
 // https://stackoverflow.com/a/43098152/1385857
 // https://medium.com/executeautomation/asp-net-core-6-0-minimal-api-with-entity-framework-core-69d0c13ba9ab
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseSqlServer(builder.Configuration["Data:parksservice:ConnectionString"]));
+        options.UseSqlServer(builder.Configuration["Data:parksserviceazure:ConnectionString"]));
 
 // added from MVC template
 //services.AddMvc();
@@ -21,11 +21,11 @@ WebApplication app = builder.Build();
 
 // https://stackoverflow.com/a/71258326/1385857
 // https://stackoverflow.com/a/71461320/1385857
-using (var scope = app.Services.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    dbContext.Database.EnsureCreated();
-}
+//using (var scope = app.Services.CreateScope())
+//{
+  //  var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    //dbContext.Database.EnsureCreated();
+//}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
